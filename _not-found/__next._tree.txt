@@ -1,2 +1,2 @@
-:HL["/your-repo-name/_next/static/chunks/0wi9hwkom5q_x.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"EhSW7iw8th3mxryGoc4UN"}
+:HL["/coworking-fe/_next/static/chunks/0wi9hwkom5q_x.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"/_not-found","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"noWLdr_WV_Lpd9yA_Cj-u"}
