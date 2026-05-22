@@ -1,0 +1,1181 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// ── Header ────────────────────────────────────────────────────────────────────
+
+.headerWrapper {
+  background-color: #f5f6fa;
+}
+
+.header {
+  @include container;
+  padding: 88px 16px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @include md {
+    padding: 148px 108px 40px;
+    flex-wrap: nowrap;
+  }
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include md {
+    gap: 24px;
+  }
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #323236;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  color: #dbfa3e;
+  border-radius: 50%;
+  flex-shrink: 0;
+
+  @include md {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include md {
+    gap: 8px;
+  }
+}
+
+.headerLabel {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 140%;
+  color: #b6b6bc;
+
+  @include md {
+    font-size: 14px;
+  }
+}
+
+.headerName {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: $black;
+
+  @include md {
+    font-size: 40px;
+  }
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include md {
+    gap: 24px;
+  }
+}
+
+.newBookingBtn {
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+
+  & svg {
+    width: 18px;
+    height: 18px;
+
+    @include md {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  @include md {
+    padding: 12px 17.5px;
+    font-size: 14px;
+  }
+}
+
+.logoutBtn {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  text-align: center;
+  color: #686970;
+  transition: color 0.15s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  @include md {
+    font-size: 16px;
+  }
+
+  &:hover {
+    color: $black;
+  }
+}
+
+// ── Tabs ──────────────────────────────────────────────────────────────────────
+
+.tabs {
+  margin-bottom: 32px;
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid #dbdbe2;
+
+  @include md {
+    margin-bottom: 80px;
+  }
+}
+
+.tabsWrapper {
+  @include container;
+  padding: 0 16px;
+
+  @include md {
+    padding: 0 108px;
+  }
+}
+
+.tab {
+  padding: 16px 24px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: #b6b6bc;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s;
+
+  @include md {
+    padding: 24px 82px;
+    font-size: 20px;
+  }
+
+  &:hover {
+    color: $black;
+  }
+
+  &.tabActive {
+    color: $black;
+    border-bottom: 2px solid $black;
+  }
+}
+
+// ── Section header ────────────────────────────────────────────────────────────
+
+.sectionHeader {
+  @include container;
+  padding: 0 16px;
+  margin-bottom: 24px;
+
+  @include md {
+    padding: 0 108px;
+    margin-bottom: 40px;
+  }
+}
+
+.sectionTitle {
+  max-width: 708px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 100%;
+  color: $black;
+
+  @include md {
+    font-size: 52px;
+    margin-bottom: 16px;
+  }
+}
+
+.sectionSubtitle {
+  max-width: 708px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 135%;
+  color: #686970;
+
+  @include md {
+    font-size: 20px;
+  }
+}
+
+// ── Filter bar ────────────────────────────────────────────────────────────────
+
+.filterBar {
+  margin-bottom: 24px;
+  @include container;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include md {
+    padding: 0 108px;
+    margin-bottom: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+.filterPills {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  @include md {
+    gap: 16px;
+    flex-wrap: nowrap;
+  }
+}
+
+.filterPill {
+  cursor: pointer;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center;
+  border: 1px solid #dbdbe2;
+  border-radius: 200px;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 100%;
+  color: #323236;
+  background: none;
+  font-family: inherit;
+
+  @include md {
+    padding: 12px 24px;
+    font-size: 16px;
+    gap: 8px;
+  }
+
+  &:hover:not(.filterPillActive) {
+    border-color: $black;
+  }
+
+  &.filterPillActive {
+    background-color: $black;
+    color: $white;
+    border-color: $black;
+
+    & .filterPillsCounts {
+      color: #f5f6fa;
+    }
+  }
+}
+
+.filterPillsCounts {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 100%;
+  color: #686970;
+
+  @include md {
+    font-size: 16px;
+  }
+}
+
+.searchWrap {
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #dbdbe2;
+  border-radius: 200px;
+  transition: border-color 0.15s;
+
+  &:focus-within {
+    border-color: $black;
+  }
+}
+
+.searchInput {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #686970;
+  width: 100%;
+  font-family: inherit;
+
+  @include md {
+    font-size: 16px;
+    width: auto;
+  }
+
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+// ── Booking list ──────────────────────────────────────────────────────────────
+
+.bookingList {
+  @include container;
+  padding: 0 16px 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include md {
+    padding: 0 108px 80px;
+    gap: 24px;
+  }
+}
+
+.loading {
+  font-size: $text-sm;
+  opacity: 0.4;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+.empty {
+  @include container;
+  padding: 0 16px 48px;
+  text-align: center;
+
+  @include md {
+    padding: 0 108px 80px;
+  }
+
+  p {
+    font-size: $text-sm;
+    opacity: 0.4;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    font-size: $text-sm;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+}
+
+// ── Booking card ──────────────────────────────────────────────────────────────
+
+.bookingCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border: 1px solid #dbdbe2;
+  border-radius: 12px;
+  padding: 16px;
+  transition: border-color 0.15s;
+  flex-wrap: wrap;
+
+  @include md {
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    flex-wrap: nowrap;
+  }
+
+  &:hover {
+    border-color: rgba(0, 0, 0, 0.25);
+  }
+
+  &.bookingCardCancelled {
+    opacity: 0.55;
+  }
+}
+
+.dateCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding-right: 12px;
+  border-right: 1px dashed #dbdbe2;
+  flex-shrink: 0;
+
+  @include md {
+    gap: 8px;
+    padding-right: 24px;
+  }
+}
+
+.dateDay {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  color: $black;
+
+  @include md {
+    font-size: 52px;
+  }
+}
+
+.dateMon {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  color: #686970;
+
+  @include md {
+    font-size: 20px;
+  }
+}
+
+.cardBody {
+  flex: 1;
+  min-width: 0;
+}
+
+.cardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+
+  @include md {
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: nowrap;
+  }
+}
+
+.cardPlan {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #323236;
+
+  @include md {
+    font-size: 30px;
+  }
+}
+
+.typeBadge {
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 100%;
+  color: $white;
+  border-radius: 100px;
+  white-space: nowrap;
+
+  @include md {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+}
+
+.badgeFixedDesk {
+  background-color: $black;
+  color: $white;
+}
+
+.badgeMeetingRoom {
+  background-color: #dcfa3f;
+  color: $black;
+}
+
+.badgeOpenSpace {
+  background-color: #d2d2d8;
+  color: $black;
+}
+
+.cardLocation {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+
+  & img {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+
+    @include md {
+      width: 24px;
+      height: 24px;
+      margin-top: 0;
+    }
+  }
+}
+
+.cardLocationWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 140%;
+  color: #686970;
+
+  @include md {
+    font-size: 16px;
+    gap: 16px;
+  }
+}
+
+.cardLocationWrapperInner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+
+  @include md {
+    gap: 16px;
+  }
+}
+
+.cardLocationName {
+  font-weight: 600;
+  color: #323236;
+}
+
+.cardAddress {
+  color: #686970;
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex: 0 0 100%;
+
+  @include md {
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 0 0 auto;
+  }
+}
+
+.detailsBtn {
+  flex: 1;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+  border: 1px solid #dbdbe2;
+  border-radius: 200px;
+  color: #323236;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.15s ease-in-out;
+
+  @include md {
+    flex: unset;
+    padding: 16px 46px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    border-color: $black;
+  }
+}
+
+.cancelBtn {
+  flex: 1;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+  border: 1px solid #ffe3e2;
+  border-radius: 200px;
+  color: #ef4446;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: 0.15s ease-in-out;
+
+  @include md {
+    flex: unset;
+    padding: 16px 46px;
+    font-size: 16px;
+  }
+
+  &:hover {
+    border-color: #ef4446;
+  }
+}
+
+// ── Details modal ─────────────────────────────────────────────────────────────
+
+.detailCheckCircle {
+  width: 64px;
+  height: 64px;
+  border-radius: $rounded-full;
+  background-color: #dcfa3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: $black;
+  flex-shrink: 0;
+
+  @include md {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+}
+
+.detailTitle {
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  text-align: center;
+  text-transform: uppercase;
+  color: $black;
+  margin: 0 0 10px;
+
+  @include md {
+    font-size: 36px;
+    margin: 0 0 12px;
+  }
+}
+
+.detailSubtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: #686970;
+  max-width: 420px;
+  margin: 0 0 20px;
+
+  @include md {
+    font-size: 16px;
+    margin: 0 0 32px;
+  }
+}
+
+.detailReceipt {
+  width: 100%;
+  border: 1px solid #dbdbe2;
+  border-radius: 12px;
+  padding: 0 16px;
+  margin-bottom: 20px;
+  text-align: left;
+
+  @include md {
+    padding: 0 24px;
+    margin-bottom: 28px;
+  }
+}
+
+.detailReceiptRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px dashed #dbdbe2;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.detailReceiptRowTotal {
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.detailReceiptLabel {
+  font-size: 14px;
+  font-weight: 400;
+  color: #8e8f96;
+  line-height: 1;
+
+  @include md {
+    font-size: 18px;
+  }
+}
+
+.detailReceiptValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: #323236;
+  text-align: right;
+  line-height: 1;
+
+  @include md {
+    font-size: 18px;
+  }
+}
+
+.detailReceiptValueTotal {
+  font-weight: 700;
+  font-size: 20px;
+
+  @include md {
+    font-size: 24px;
+  }
+}
+
+.detailActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+
+  @include md {
+    gap: 16px;
+  }
+}
+
+.detailDownloadBtn {
+  @include btn-primary;
+  flex: 1;
+  padding: 13px;
+  font-size: 11px;
+
+  @include md {
+    padding: 16px;
+    font-size: 13px;
+  }
+}
+
+.detailCloseBtn {
+  @include btn-outline;
+  flex: 1;
+  padding: 13px;
+  font-size: 11px;
+
+  @include md {
+    padding: 16px;
+    font-size: 13px;
+  }
+}
+
+// ── Cancel modal ─────────────────────────────────────────────────────────────
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  padding: 0;
+
+  @include md {
+    align-items: center;
+    padding: 16px;
+  }
+}
+
+.modal {
+  background: $white;
+  border-radius: 20px 20px 0 0;
+  padding: 28px 20px 36px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  @include md {
+    border-radius: 24px;
+    padding: 40px;
+    max-width: 800px;
+  }
+}
+
+.modalIcon {
+  width: 64px;
+  height: 64px;
+  border-radius: $rounded-full;
+  background-color: #ffe3e2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+
+  & svg {
+    width: 24px;
+    height: 24px;
+
+    @include md {
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  @include md {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 24px;
+  }
+}
+
+.modalTitle {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 110%;
+  color: $black;
+
+  @include md {
+    font-size: 40px;
+    margin-bottom: 16px;
+  }
+}
+
+.modalDesc {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+  color: #686970;
+  max-width: 660px;
+  margin-bottom: 20px;
+
+  @include md {
+    font-size: 20px;
+    line-height: 135%;
+    margin-bottom: 24px;
+  }
+}
+
+.modalReceipt {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #dbdbe2;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: left;
+
+  @include md {
+    padding: 32px 24px;
+    margin-bottom: 24px;
+  }
+}
+
+.modalReceiptRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #dbdbe2;
+
+  @include md {
+    padding: 12px 0;
+  }
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.modalReceiptRowLast {
+  border-bottom: none;
+
+  .modalReceiptValue {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    color: #323236;
+
+    @include md {
+      font-size: 26px;
+    }
+  }
+}
+
+.modalReceiptLabel {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #8e8f96;
+
+  @include md {
+    font-size: 20px;
+  }
+}
+
+.modalReceiptValue {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: #323236;
+  text-align: right;
+
+  @include md {
+    font-size: 20px;
+  }
+}
+
+.modalActions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+
+  @include md {
+    gap: 16px;
+  }
+}
+
+.modalCancelRefund {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  padding: 14px 20px;
+  color: #ef4446;
+  background: none;
+  border: none;
+  font-family: inherit;
+
+  @include md {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+
+  &:hover {
+    color: #f83e41;
+  }
+}
+
+.modalKeepBooking {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 100%;
+  padding: 14px 20px;
+  border-radius: 200px;
+  color: $white;
+  background-color: $black;
+  border: none;
+  font-family: inherit;
+
+  @include md {
+    font-size: 16px;
+    padding: 16px 24px;
+  }
+
+  &:hover {
+    background-color: $neutral-800;
+  }
+}
+
+// ── Profile tab ───────────────────────────────────────────────────────────────
+
+.profileTab {
+  width: 100%;
+}
+
+.profileTabInner {
+  @include container;
+  padding: 0 16px 48px;
+
+  @include md {
+    padding: 0 108px 80px;
+  }
+}
+
+.profileFormTitle {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  color: $black;
+  margin: 0 0 12px;
+
+  @include md {
+    font-size: 52px;
+    margin: 0 0 16px;
+  }
+}
+
+.profileFormSubtitle {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #686970;
+  margin: 0 0 32px;
+  max-width: 680px;
+
+  @include md {
+    font-size: 18px;
+    margin: 0 0 48px;
+  }
+}
+
+.profileSection {
+  margin-bottom: 32px;
+
+  @include md {
+    margin-bottom: 40px;
+  }
+}
+
+.profileSectionTitle {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #8e8f96;
+
+  @include md {
+    font-size: 22px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: $black;
+    font-weight: 500;
+    margin-bottom: 24px;
+  }
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.profileField {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileLabel {
+  font-size: 14px;
+  font-weight: 500;
+  color: $black;
+}
+
+.profileInputWrap {
+  position: relative;
+}
+
+.profileInput {
+  @include input-base;
+
+  .profileInputWrap & {
+    padding-right: 48px;
+  }
+}
+
+.profileEyeBtn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #b6b6bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  transition: color 0.15s;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.profileError {
+  font-size: $text-sm;
+  color: #ef4446;
+  margin: 0 0 16px;
+}
+
+.profileActions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.profileSaveBtn {
+  background-color: #8e8f96;
+  color: $white;
+  font-size: $text-xs;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 14px 32px;
+  border-radius: $rounded-full;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.15s;
+  width: 100%;
+
+  @include md {
+    width: auto;
+  }
+
+  &:hover:not(:disabled) {
+    background-color: $black;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: default;
+  }
+}

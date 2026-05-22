@@ -1,0 +1,99 @@
+@use "variables" as *;
+
+@mixin md {
+  @media (min-width: $md) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@mixin btn-base {
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  border-radius: $rounded-full;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    background-color 0.15s,
+    color 0.15s,
+    border-color 0.15s,
+    opacity 0.15s;
+  border: none;
+  font-family: inherit;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+@mixin btn-primary {
+  @include btn-base;
+  background-color: $black;
+  color: $white;
+  font-size: $text-xs;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-800;
+  }
+}
+
+@mixin btn-outline {
+  @include btn-base;
+  background-color: transparent;
+  color: $black;
+  border: 1px solid $black;
+  font-size: $text-xs;
+
+  &:hover:not(:disabled) {
+    background-color: $black;
+    color: $white;
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  border: 1px solid #B6B6BC;
+  border-radius: 100px;
+  padding: 14px 16px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+  background: $white;
+  color: #323236;
+
+  &:focus {
+    border-color: $black;
+  }
+
+  &::placeholder {
+    color: #B6B6BC;
+  }
+}
+
+@mixin card {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $rounded-xl;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin truncate-lines($n) {
+  display: -webkit-box;
+  -webkit-line-clamp: $n;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

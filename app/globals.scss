@@ -1,0 +1,187 @@
+@use "../styles/variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: $white;
+  color: $black;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: inherit;
+}
+
+.button-primary {
+  display: inline-block;
+  width: fit-content;
+  background-color: $white;
+  color: $black;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 20px 38.5px;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $neutral-200;
+  }
+
+  &-small {
+    display: inline-block;
+    width: fit-content;
+    background-color: $white;
+    color: $black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px 24px;
+    border-radius: $rounded-full;
+    transition: background-color 0.15s;
+    text-transform: uppercase;
+
+    &:hover {
+      background-color: $neutral-200;
+    }
+  }
+}
+
+.button-primary-outline {
+  display: inline-block;
+  width: fit-content;
+  background-color: transparent;
+  color: $white;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 20px 37px;
+  border: 1px solid $white;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $white;
+    color: $black;
+  }
+
+  &-small {
+    display: inline-block;
+    width: fit-content;
+    background-color: $white;
+    color: $black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px 24px;
+    border-radius: $rounded-full;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: $neutral-200;
+    }
+  }
+}
+
+.button-secondary {
+  display: inline-block;
+  width: fit-content;
+  background-color: $black;
+  color: $white;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 20px 38.5px;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $neutral-700;
+  }
+
+  &-small {
+    display: inline-block;
+    width: fit-content;
+    background-color: $white;
+    color: $black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px 24px;
+    border-radius: $rounded-full;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: $neutral-700;
+    }
+  }
+}
+
+.button-secondary-outline {
+  display: inline-block;
+  width: fit-content;
+  background-color: transparent;
+  border: 1px solid $black;
+  color: $black;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  padding: 19px 36px;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $black;
+    color: $white;
+  }
+
+  &-small {
+    display: inline-block;
+    width: fit-content;
+    background-color: $white;
+    color: $black;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    padding: 16px 24px;
+    border-radius: $rounded-full;
+    transition: background-color 0.15s;
+
+    &:hover {
+      background-color: $neutral-200;
+    }
+  }
+}
+h1, h2, h3, h4, h5, h6 {
+  text-transform: uppercase;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}

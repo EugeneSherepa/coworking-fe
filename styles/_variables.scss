@@ -1,0 +1,68 @@
+// Colors
+$black: #000000;
+$white: #ffffff;
+$neutral-50: #fafafa;
+$neutral-100: #f5f5f5;
+$neutral-200: #e5e5e5;
+$neutral-300: #d4d4d4;
+$neutral-400: #a3a3a3;
+$neutral-700: #404040;
+$neutral-800: #262626;
+$neutral-900: #171717;
+$neutral-950: #0a0a0a;
+
+// Breakpoints
+$md: 990px;
+
+// Spacing scale (Tailwind-compatible)
+$spacing: (
+  0: 0,
+  0_5: 0.125rem,
+  1: 0.25rem,
+  1_5: 0.375rem,
+  2: 0.5rem,
+  2_5: 0.625rem,
+  3: 0.75rem,
+  3_5: 0.875rem,
+  4: 1rem,
+  5: 1.25rem,
+  6: 1.5rem,
+  8: 2rem,
+  10: 2.5rem,
+  12: 3rem,
+  14: 3.5rem,
+  16: 4rem,
+  20: 5rem,
+  24: 6rem,
+  36: 9rem,
+);
+
+// Container widths
+$max-w-sm: 24rem;
+$max-w-md: 28rem;
+$max-w-lg: 32rem;
+$max-w-xl: 36rem;
+$max-w-2xl: 42rem;
+$max-w-4xl: 56rem;
+$max-w-5xl: 64rem;
+$max-w-7xl: 80rem;
+
+// Border radius
+$rounded: 0.25rem;
+$rounded-lg: 0.5rem;
+$rounded-xl: 0.75rem;
+$rounded-2xl: 1rem;
+$rounded-full: 9999px;
+
+// Typography
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+$text-5xl: 3rem;
+$text-7xl: 4.5rem;
+$text-8xl: 6rem;

@@ -1,0 +1,1466 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  @include container;
+  padding: 0 16px;
+  padding-top: 86px;
+  padding-bottom: 48px;
+
+  @include md {
+    padding: 0 108px;
+    padding-top: 90px;
+    padding-bottom: 80px;
+  }
+}
+
+// ── Breadcrumb ────────────────────────────────────────────────────────────────
+
+.breadcrumb {
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #b6b6bc;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include md {
+    margin-bottom: 80px;
+    overflow-x: visible;
+    white-space: normal;
+  }
+}
+
+.breadcrumbItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .sep {
+    color: #b6b6bc;
+  }
+}
+
+.breadcrumbBtn {
+  cursor: default;
+  transition: opacity 0.15s;
+
+  &.breadcrumbActive {
+    color: #323236;
+    & .sep {
+      color: #323236;
+    }
+  }
+
+  &.breadcrumbDone {
+    cursor: pointer;
+    color: #323236;
+
+    & .sep {
+      color: #323236;
+    }
+  }
+
+  &.breadcrumbCurrent {
+    color: #323236;
+    & .sep {
+      color: #323236;
+    }
+  }
+}
+
+// ── Step headings ─────────────────────────────────────────────────────────────
+
+.stepTitle {
+  margin-bottom: 32px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+  text-align: center;
+  color: #000000;
+  text-transform: capitalize;
+}
+
+.stepTitle2 {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+  color: #000000;
+  text-transform: capitalize;
+}
+
+// ── Location step ─────────────────────────────────────────────────────────────
+
+.locationGrid {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.locationCard {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 16px;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+  background-color: #f5f6fa;
+
+  &:hover {
+    background-color: #eeeef0;
+    transition:
+      border-color 0.15s,
+      background 0.15s;
+  }
+
+  &.locationCardSelected {
+    border-color: $black;
+    background-color: #eeeef0;
+  }
+
+  .locImg {
+    margin-bottom: 16px;
+    aspect-ratio: 1.58;
+    border-radius: 12px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+
+  .locBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .locName {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 100%;
+      color: $black;
+    }
+
+    .locDesc {
+      margin-bottom: 16px;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      color: #323236;
+    }
+
+    .locMeta {
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: #686970;
+
+      & img {
+        object-fit: contain;
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .viewMoreBtn {
+      display: flex;
+      margin: 0 auto;
+      margin-top: 16px;
+      padding: 16px 51px;
+    }
+  }
+}
+
+// ── Type step ─────────────────────────────────────────────────────────────────
+
+.typeGrid {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  @include md {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.typeCard {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  padding: 20px;
+  transition:
+    border-color 0.15s,
+    background 0.15s;
+  background-color: #f5f6fa;
+
+  &:hover {
+    background-color: #eeeef0;
+    transition:
+      border-color 0.15s,
+      background 0.15s;
+  }
+
+  &.typeCardSelected {
+    border-color: $black;
+    background-color: #eeeef0;
+  }
+
+  .typeImg {
+    margin-bottom: 16px;
+    aspect-ratio: 1.58;
+    border-radius: 12px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+
+  .typeBody {
+    .typeName {
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 22px;
+      line-height: 100%;
+      color: $black;
+    }
+
+    .typeDesc {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 130%;
+      color: #323236;
+    }
+  }
+}
+
+// ── Plan step ─────────────────────────────────────────────────────────────────
+
+.planList {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  @include md {
+    max-width: 810px;
+  }
+}
+
+.planCard {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  background-color: #f5f6fa;
+  border: 1px solid transparent;
+  border-radius: 12px;
+
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+
+  &:hover {
+    background-color: #eeeef0;
+  }
+
+  &.planCardSelected {
+    border-color: $black;
+    background-color: #eeeef0;
+  }
+
+  .planInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .planHeader {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      .planName {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 100%;
+        color: $black;
+      }
+
+      .planBadge {
+        font-size: $text-xs;
+        background-color: $black;
+        color: $white;
+        padding: 0.125rem 0.5rem;
+        border-radius: $rounded-full;
+      }
+    }
+
+    .planDesc {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 100%;
+      color: #686970;
+    }
+  }
+
+  .planPrice {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 100%;
+    color: #000000;
+  }
+}
+
+// ── Meeting room cards ────────────────────────────────────────────────────────
+
+.mrGrid {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  gap: 16px;
+  margin-bottom: 40px;
+  padding-bottom: 4px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include md {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+}
+
+.mrCard {
+  cursor: pointer;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  width: 80vw;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background: #f5f6fa;
+  border: 2px solid transparent;
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+
+  &:hover {
+    background-color: #eeeef0;
+  }
+
+  &.mrCardSelected {
+    border-color: #686970;
+    background-color: #eeeef0;
+  }
+
+  @include md {
+    width: auto;
+    flex-shrink: unset;
+    padding: 24px;
+  }
+}
+
+.mrCardImageWrap {
+  margin-bottom: 20px;
+  position: relative;
+  aspect-ratio: 1.6;
+}
+
+.mrCardImg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.mrCardImgOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0) 55%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+}
+
+.mrCardImgTitle {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  color: $white;
+  z-index: 5;
+}
+
+.mrCardPrice {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 100%;
+
+  @include md {
+    font-size: 48px;
+  }
+}
+
+.mrCardUnit {
+  font-weight: 500;
+  font-size: 16px;
+  color: #8e8f96;
+}
+
+.mrCardDesc {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: #515155;
+}
+
+.mrCardFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mrCardFeature {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 15px;
+  color: #686970;
+}
+
+.mrCheckmark {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.hourlyNote {
+  max-width: $max-w-md;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.25rem;
+  font-size: $text-sm;
+  opacity: 0.55;
+  text-align: center;
+}
+
+.timePicker {
+  margin-bottom: 1.5rem;
+}
+
+.timePickerLabel {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: $black;
+
+  @include md {
+    margin-top: 56px;
+    margin-bottom: 24px;
+    font-size: 28px;
+  }
+}
+
+.timeOptions {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+
+  @include md {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 24px;
+    row-gap: 16px;
+  }
+}
+
+.timeBtn {
+  padding: 10px 16.5px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 100%;
+  border-radius: 6px;
+  background-color: transparent;
+  border: 1px solid #dbdbe2;
+
+  transition:
+    border-color 0.15s,
+    background-color 0.15s;
+
+  &:hover {
+    border-color: $black;
+  }
+}
+
+.timeBtnActive {
+  border-color: $black;
+  background-color: $black;
+  color: $white;
+}
+
+.timeBtnInRange {
+  background-color: #f0fab8;
+  border-color: #dbfa3e;
+  color: $black;
+}
+
+// ── Continue button ───────────────────────────────────────────────────────────
+
+.continueBtn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 24px;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  @include md {
+    width: auto;
+    margin: 0 auto;
+    padding: 20px 153px;
+  }
+}
+
+// ── Details step ──────────────────────────────────────────────────────────────
+
+.detailsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  @include md {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}
+
+.calendarSection {
+  margin-bottom: 24px;
+}
+
+.mapLoading {
+  height: 16rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $rounded-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $text-sm;
+  opacity: 0.4;
+}
+
+.bookingError {
+  background-color: $black;
+  color: $white;
+  font-size: $text-sm;
+  padding: 0.75rem 1rem;
+  border-radius: $rounded-lg;
+  margin-bottom: 1rem;
+}
+
+// ── Summary sidebar ───────────────────────────────────────────────────────────
+
+.summary {
+  border: 1px solid #dbdbe2;
+  border-radius: 12px;
+  padding: 16px;
+
+  @include md {
+    position: sticky;
+    top: 96px;
+  }
+}
+
+.summaryWrapper {
+  max-width: 100%;
+  width: 100%;
+
+  @include md {
+    max-width: 500px;
+  }
+}
+
+.summaryHeader {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+
+  .summaryIcon {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #e4e4e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a0a0a8;
+
+    & img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .summaryName {
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    text-transform: capitalize;
+    color: #323236;
+  }
+
+  .summaryAddr {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #686970;
+  }
+}
+
+.summaryMeta {
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #8e8f96;
+
+  &:last-of-type {
+    margin-bottom: 32px;
+  }
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.summaryDivider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+}
+
+.summaryRow {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: #323236;
+}
+
+.summaryRowStrike {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.summaryRowStrikeLeftTop {
+  display: flex;
+  gap: 4px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  color: #323236;
+}
+
+.summaryRowStrikeLeft {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #8e8f96;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.summaryTotal {
+  padding-top: 16px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 100%;
+  text-transform: capitalize;
+  border-top: 1px solid #dbdbe2;
+  color: #323236;
+}
+
+.summaryTotalBottom {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  & button {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    width: 100%;
+
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.bookBtn {
+  margin-top: 1.5rem;
+  width: 100%;
+  background-color: $black;
+  color: $white;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.875rem;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+
+  &:hover:not(:disabled) {
+    background-color: $neutral-800;
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+}
+
+// ── Confirmed step ────────────────────────────────────────────────────────────
+
+.confirmedPage {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 0 64px;
+}
+
+.confirmedCheckCircle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #dcfa3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: $black;
+  flex-shrink: 0;
+}
+
+.confirmedHeading {
+  margin-bottom: 12px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 120%;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include md {
+    font-size: 52px;
+  }
+}
+
+.confirmedSubtitle {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+  letter-spacing: 0%;
+  text-align: center;
+  color: #686970;
+}
+
+.confirmedReceipt {
+  width: 100%;
+  padding: 32px 24px;
+  border: 1px solid #dbdbe2;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  text-align: left;
+}
+
+.confirmedReceiptRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px dashed #dbdbe2;
+
+  &:first-child {
+    border-top: none;
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.confirmedReceiptRowTotal {
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+
+.confirmedReceiptLabel {
+  color: #8e8f96;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.confirmedReceiptValue {
+  color: #323236;
+  text-align: right;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.confirmedReceiptRowTotalconfirmedReceiptValue {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 100%;
+  text-align: right;
+  color: #323236;
+}
+
+.confirmedActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+
+  @include md {
+    flex-direction: row;
+    gap: 16px;
+
+    & button {
+      width: 50%;
+    }
+  }
+
+  & button {
+    width: 100%;
+  }
+}
+
+.confirmedActionBtn {
+  flex: 1;
+  padding: 16px 24px;
+  text-align: center;
+}
+
+// ── Modal ─────────────────────────────────────────────────────────────────────
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.modal {
+  background-color: $white;
+  max-width: 808px;
+  border-radius: 24px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.modalImageWrap {
+  position: relative;
+  aspect-ratio: 2;
+  background-color: #e4e4e8;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.modalImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modalDots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.modalDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition:
+    background-color 0.15s,
+    transform 0.15s;
+}
+
+.modalDotActive {
+  background-color: $white;
+  transform: scale(1.4);
+}
+
+.modalImagePlaceholder {
+  color: #a0a0a8;
+}
+
+.modalImageNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid #8e8f96;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $neutral-100;
+  }
+
+  &.modalImageNavPrev {
+    left: 32px;
+  }
+
+  &.modalImageNavNext {
+    right: 32px;
+  }
+}
+
+.modalBody {
+  padding: 20px;
+
+  @include md {
+    padding: 32px;
+  }
+}
+
+.modalTitle {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 100%;
+  color: $black;
+}
+
+.modalDesc {
+  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.modalMeta {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #686970;
+
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.modalIncludes {
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.modalTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.modalTag {
+  padding: 9px 8px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  color: #686970;
+  background-color: #f5f6fa;
+  border-radius: 8px;
+}
+
+// ── Calendar ──────────────────────────────────────────────────────────────────
+
+.calendar {
+  max-width: 100%;
+  width: 100%;
+
+  @include md {
+    max-width: fit-content;
+    width: auto;
+  }
+}
+
+.calHeader {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calNavBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $neutral-100;
+  }
+}
+
+.calMonth {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 100%;
+  text-transform: capitalize;
+  color: #323236;
+}
+
+.calWeekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 6px;
+  row-gap: 16px;
+  margin-bottom: 16px;
+
+  @include md {
+    column-gap: 24px;
+  }
+}
+
+.calDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  column-gap: 6px;
+  row-gap: 12px;
+
+  @include md {
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+}
+
+.calDay {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include md {
+    gap: 8px;
+  }
+
+  &:hover:not(:disabled) .calDayNum {
+    background-color: $neutral-100;
+  }
+
+  &:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+  }
+
+  &.calDaySelected .calDayNum {
+    background-color: $black !important;
+    color: $white;
+    border-color: $black;
+  }
+
+  &.calDayInRange {
+    .calDayNum {
+      background-color: rgba(0, 0, 0, 0.05);
+      border-color: transparent;
+    }
+  }
+}
+
+.calDayNum {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid #dbdbe2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 100%;
+  text-align: center;
+  color: #323236;
+  transition:
+    background-color 0.15s,
+    border-color 0.15s,
+    color 0.15s;
+
+  @include md {
+    width: 64px;
+    height: 64px;
+    font-size: 22px;
+  }
+}
+
+.calDayLabel {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 100%;
+  text-align: center;
+  color: #323236;
+
+  @include md {
+    font-size: 16px;
+  }
+}
+
+// ── Fixed desk map ────────────────────────────────────────────────────────────
+
+.deskMapWrap {
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.deskMapWrapTitle {
+  margin-top: 56px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 100%;
+  color: #000000;
+}
+
+.deskMapLegend {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.deskMapInner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 600 / 308;
+}
+
+.deskMapImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.deskMapOverlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.deskBtn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+
+  &.deskBtnAvailable {
+    background-color: $black;
+    border: 1.5px solid $black;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.5);
+    }
+  }
+
+  &.deskBtnBooked {
+    background-color: rgba(0, 0, 0, 0.12);
+    border: 1.5px solid rgba(0, 0, 0, 0.18);
+    cursor: not-allowed;
+  }
+
+  &.deskBtnSelected {
+    background-color: $white;
+    border: 2px solid $black;
+    transform: translate(-50%, -50%) scale(1.4);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+  }
+}
+
+.deskTooltip {
+  position: absolute;
+  z-index: 10;
+  background-color: $black;
+  color: $white;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 4px 8px;
+  pointer-events: none;
+  white-space: nowrap;
+  transform: translate(-50%, calc(-100% - 10px));
+}
+
+.deskTooltipBooked {
+  opacity: 0.6;
+}
+
+// ── Floor map ─────────────────────────────────────────────────────────────────
+
+.floorMapWrap {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $rounded-xl;
+  overflow: auto;
+}
+
+.floorMapLegend {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 100%;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.legendItemDot {
+  display: block;
+  width: 24px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legendAvailable {
+  width: 24px;
+  height: 12px;
+  background-color: transparent;
+  border: 1px solid #323236;
+  border-radius: 2px;
+}
+
+.legendBooked {
+  width: 24px;
+  height: 12px;
+  background-color: #dbdbe2;
+  border: 1px solid #d2d2d8;
+  border-radius: 2px;
+}
+
+.legendSelected {
+  width: 24px;
+  height: 12px;
+  background-color: #f0fab8;
+  border: 1px solid #dafa3e;
+  border-radius: 2px;
+}
+
+.floorMapArea {
+  position: relative;
+  background-color: $neutral-50;
+}
+
+.floorMapEmpty {
+  height: 16rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: $rounded-xl;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $text-sm;
+  opacity: 0.4;
+}
+
+.workspaceBtn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: $rounded-lg;
+  font-size: $text-xs;
+  font-weight: 700;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+
+  &.wsAvailable {
+    background-color: $black;
+    color: $white;
+    cursor: pointer;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+  }
+
+  &.wsBooked {
+    background-color: $neutral-200;
+    color: $neutral-400;
+    cursor: not-allowed;
+  }
+
+  &.wsSelected {
+    background-color: $white;
+    border: 2px solid $black;
+    color: $black;
+    transform: translate(-50%, -50%) scale(1.1);
+    box-shadow:
+      0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  }
+
+  .wsIcon {
+    font-size: 1.125rem;
+    line-height: 1;
+  }
+
+  .wsNum {
+    font-size: 9px;
+  }
+}
+
+.wsTooltip {
+  position: absolute;
+  z-index: 10;
+  background-color: $black;
+  color: $white;
+  font-size: $text-xs;
+  border-radius: $rounded-lg;
+  padding: 0.5rem 0.75rem;
+  pointer-events: none;
+  white-space: nowrap;
+
+  p:first-child {
+    font-weight: 700;
+  }
+
+  .tooltipMeta {
+    opacity: 0.7;
+  }
+
+  .tooltipBooked {
+    color: #fca5a5;
+  }
+}

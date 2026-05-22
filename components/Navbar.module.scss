@@ -1,0 +1,213 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: transparent;
+  z-index: 50;
+  transform: translateY(0);
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &.darkText {
+    .logo { color: $black; }
+    .navLink { color: $black; }
+    .accountLink { color: $black; }
+    .menuBtn { color: $black; }
+  }
+
+  &.solid {
+    background-color: $white;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+    .logo {
+      color: $black;
+    }
+
+    .navLink {
+      color: $black;
+    }
+
+    .accountLink {
+      color: $black;
+    }
+
+    .menuBtn {
+      color: $black;
+    }
+
+    .navButton {
+      background-color: $black;
+      color: $white;
+
+      &:hover {
+        background-color: $neutral-800;
+      }
+    }
+  }
+}
+
+.inner {
+  @include container;
+  margin: 0 auto;
+  padding: 0 16px;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include md {
+    padding: 0 108px;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  color: $white;
+  transition: color 0.3s ease;
+}
+
+.nav {
+  display: none;
+  align-items: center;
+  gap: 32px;
+
+  @include md {
+    display: flex;
+  }
+}
+
+.navLink {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $white;
+  transition:
+    color 0.3s ease,
+    opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.accountLink {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: $white;
+  transition:
+    color 0.3s ease,
+    opacity 0.15s ease-in-out;
+  display: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include md {
+    display: block;
+  }
+}
+
+.navButton {
+  padding: 16px 24px !important;
+  display: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  @include md {
+    display: block;
+  }
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: $white;
+  transition: color 0.3s ease;
+
+  @include md {
+    display: none;
+  }
+}
+
+.mobileMenu {
+  background-color: $white;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.35s ease, opacity 0.25s ease;
+
+  @include md {
+    display: none;
+  }
+
+  &.opened {
+    max-height: 480px;
+    opacity: 1;
+  }
+}
+
+.mobileLink {
+  display: block;
+  padding: 0.75rem 1.5rem;
+  font-size: $text-sm;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: $black;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $neutral-50;
+  }
+
+  &.mobileLinkActive {
+    opacity: 0.45;
+  }
+}
+
+.mobileLinkCta {
+  display: block;
+  margin: 12px 1.5rem 16px;
+  padding: 14px 24px;
+  font-size: $text-sm;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-align: center;
+  background-color: $black;
+  color: $white;
+  border-radius: $rounded-full;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: $neutral-800;
+  }
+}

@@ -1,0 +1,190 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.footer {
+  margin-top: auto;
+  position: relative;
+}
+
+.inner {
+  @include container;
+  padding: 40px 16px;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @include md {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 80px 108px;
+    padding-bottom: 180px;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  
+  @include md {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.colTitleBtn {
+  padding: 16px 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 100%;
+  color: $black;
+  cursor: pointer;
+  text-align: left;
+
+  @include md {
+    padding: unset;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+.chevron {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+
+  [aria-expanded="true"] & {
+    transform: rotate(180deg);
+  }
+
+  @include md {
+    display: none;
+  }
+}
+
+.colLinks {
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  transition:
+    max-height 0.35s ease,
+    padding-bottom 0.35s ease;
+
+  @include md {
+    max-height: none;
+    padding-top: 24px;
+    overflow: visible;
+  }
+}
+
+.colLinksOpen {
+  max-height: 500px;
+  padding-bottom: 12px;
+
+  @include md {
+    max-height: none;
+  }
+}
+
+.colLink {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #323236;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.colText {
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  color: #323236;
+
+  &:hover {
+    color: $black;
+  }
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.copyright {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  color: #686970;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  @include md {
+    gap: 32px;
+  }
+}
+
+.socialBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  color: $white;
+  transition:
+    background-color 0.15s,
+    color 0.15s;
+
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $black;
+    color: $black;
+  }
+}
+
+.wordmark {
+  position: absolute;
+  bottom: -110px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  overflow: hidden;
+
+  p {
+    margin-bottom: -33px;
+    font-size: 112px;
+    font-weight: 600;
+    line-height: 100%;
+    color: $black;
+
+    @include md {
+      margin-bottom: -100px;
+      font-size: 373px;
+    }
+  }
+}
