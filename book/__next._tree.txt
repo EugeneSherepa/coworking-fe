@@ -1,4 +1,3 @@
-:HL["/coworking-fe/_next/static/chunks/0wi9hwkom5q_x.css","style"]
-:HL["/coworking-fe/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
-:HL["/coworking-fe/_next/static/chunks/0sqm4ceps_aj5.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"book","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"noWLdr_WV_Lpd9yA_Cj-u"}
+:HL["/coworking-fe/_next/static/css/29c9daf3e379bb81.css","style"]
+:HL["/coworking-fe/_next/static/css/35413967506183b8.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"book","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"g2aCALgOW1tFnB7CQKgTB"}

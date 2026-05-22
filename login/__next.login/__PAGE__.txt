@@ -1,11 +1,11 @@
 1:"$Sreact.fragment"
-2:I[47257,["/coworking-fe/_next/static/chunks/01xlw8hd842-c.js","/coworking-fe/_next/static/chunks/0d3shmwh5_nmn.js"],"ClientPageRoot"]
-3:I[51301,["/coworking-fe/_next/static/chunks/01xlw8hd842-c.js","/coworking-fe/_next/static/chunks/0d3shmwh5_nmn.js","/coworking-fe/_next/static/chunks/08v8jmnt~10if.js","/coworking-fe/_next/static/chunks/04opg6w0w2sih.js"],"default"]
-6:I[97367,["/coworking-fe/_next/static/chunks/01xlw8hd842-c.js","/coworking-fe/_next/static/chunks/0d3shmwh5_nmn.js"],"OutletBoundary"]
+2:I[1076,[],"ClientPageRoot"]
+3:I[5533,["316","static/chunks/316-b316325a3e194733.js","520","static/chunks/app/login/page-4a4cf35cfe7dc7c8.js"],"default"]
+6:I[1872,[],"OutletBoundary"]
 7:"$Sreact.suspense"
-:HL["/coworking-fe/_next/static/chunks/0q6x2h_~vmo-b.css","style"]
-:HL["/coworking-fe/_next/static/chunks/0sqm4ceps_aj5.css","style"]
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/coworking-fe/_next/static/chunks/0q6x2h_~vmo-b.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/coworking-fe/_next/static/chunks/0sqm4ceps_aj5.css","precedence":"next"}],["$","script","script-0",{"src":"/coworking-fe/_next/static/chunks/08v8jmnt~10if.js","async":true}],["$","script","script-1",{"src":"/coworking-fe/_next/static/chunks/04opg6w0w2sih.js","async":true}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"noWLdr_WV_Lpd9yA_Cj-u"}
+:HL["/coworking-fe/_next/static/css/85ba1607c7fd45da.css","style"]
+:HL["/coworking-fe/_next/static/css/35413967506183b8.css","style"]
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],[["$","link","0",{"rel":"stylesheet","href":"/coworking-fe/_next/static/css/85ba1607c7fd45da.css","precedence":"next"}],["$","link","1",{"rel":"stylesheet","href":"/coworking-fe/_next/static/css/35413967506183b8.css","precedence":"next"}]],["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"g2aCALgOW1tFnB7CQKgTB"}
 4:{}
 5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
 8:null
