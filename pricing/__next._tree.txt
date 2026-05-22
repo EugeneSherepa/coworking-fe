@@ -1,0 +1,12 @@
+:HL["/your-repo-name/_next/static/chunks/0wi9hwkom5q_x.css","style"]
+:HL["/your-repo-name/_next/static/media/83afe278b6a6bb3c-s.p.0q-301v4kxxnr.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/your-repo-name/_next/static/chunks/0sqm4ceps_aj5.css","style"]
+:HL["/your-repo-name/_next/static/media/icon-wifi.037xun~js5fzd.svg","image"]
+:HL["/your-repo-name/_next/static/media/icon-apple.09yg9o51qa~_z.svg","image"]
+:HL["/your-repo-name/_next/static/media/icon-people.0d9.7hlew56b9.svg","image"]
+:HL["/your-repo-name/_next/static/media/icon-chair.06f6ag9ln_x3l.svg","image"]
+:HL["/your-repo-name/_next/static/media/icon-dog.05re~v0y6pgd6.svg","image"]
+:HL["/your-repo-name/_next/static/media/icon-cup.0yz0193trhn8s.svg","image"]
+:HL["/your-repo-name/_next/static/media/icon-printer.0alvcqkyiyel-.svg","image"]
+:HL["/your-repo-name/_next/static/media/hero.16ky863hqjslc.webp","image"]
+0:{"tree":{"name":"","param":null,"prefetchHints":16,"slots":{"children":{"name":"pricing","param":null,"prefetchHints":0,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":0,"slots":null}}}}},"staleTime":300,"buildId":"EhSW7iw8th3mxryGoc4UN"}
