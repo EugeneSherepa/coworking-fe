@@ -43,7 +43,7 @@ export default function SignupPage() {
 
   return (
     <div className={styles.page}>
-      <Navbar color="black" hideLinks="true" />
+      <Navbar color="black" hideLinks={true} />
       <div className={styles.formSide}>
         <div className={styles.formWrap}>
           <h1 className={styles.title}>Sign Up</h1>
