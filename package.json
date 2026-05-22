@@ -5,9 +5,7 @@
   "homepage": "https://eugenesherepa.github.io/coworking-fe",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint",
+    "build": "next build --webpack",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d out"
   },

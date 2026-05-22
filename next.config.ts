@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig = {
-  output: "export",
+  output: 'export',
   images: {
     unoptimized: true,
   },
-  basePath: "/coworking-fe",
-  assetPrefix: "/coworking-fe/",
+  basePath: '/coworking-fe',
 };
 
 export default nextConfig;
