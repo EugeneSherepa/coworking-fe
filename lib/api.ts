@@ -19,7 +19,7 @@ api.interceptors.response.use(
     if (err.response?.status === 401 && typeof window !== 'undefined') {
       localStorage.removeItem('spark_token');
       localStorage.removeItem('spark_user');
-      window.location.href = '/login';
+      window.location.href = `${process.env.NEXT_PUBLIC_BASE_PATH || ''}/login`;
     }
     return Promise.reject(err);
   }
